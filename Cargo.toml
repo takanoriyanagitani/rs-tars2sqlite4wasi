@@ -3,7 +3,16 @@ name = "rs-tars2sqlite4wasi"
 version = "0.1.0"
 edition = "2024"
 
+description = "Convert tar(.gz) files to SQLite tables"
+license = "Apache-2.0"
+repository = "https://github.com/takanoriyanagitani/rs-tars2sqlite4wasi"
+homepage = "https://github.com/takanoriyanagitani/rs-tars2sqlite4wasi"
+documentation = "https://docs.rs/rs-tars2sqlite4wasi/latest"
+keywords = ["tar", "sqlite", "wasi", "convert", "archive"]
+
 exclude = [
+  "tars2sqlite4wasi.wasm",
+  "sample.d/",
 ]
 
 [lints.rust]

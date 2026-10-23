@@ -1,0 +1,46 @@
+[package]
+name = "rs-tars2sqlite4wasi"
+version = "0.1.0"
+edition = "2024"
+
+exclude = [
+]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+
+[profile.release-wasi]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 's'
+codegen-units = 1
+
+[[bin]]
+name = "tars2sqlite4wasi"
+
+[dependencies.rusqlite]
+version = "0.40.2"
+default-features = false
+features = [
+    "bundled",
+    "wasm32-wasi-vfs",
+]
+
+[dependencies.flate2]
+version = "1.1.10"
+default-features = false
+features = [
+  "rust_backend",
+]
+
+[dependencies.tar]
+version = "0.4.46"
+default-features = false
+features = [
+]
